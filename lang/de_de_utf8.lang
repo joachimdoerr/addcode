@@ -16,3 +16,5 @@ addcode_help_classfile_name_3 = class.*.global.inc.php
 addcode_help_functionfile_name_1 = function.*.backend.inc.php
 addcode_help_functionfile_name_2 = function.*.frontend.inc.php
 addcode_help_functionfile_name_3 = function.*.global.inc.php
+addcode_install_need_rex = Dieses Addon benötigt Redaxo Version ###version### oder höher.
+addcode_install_need_php = Dieses Addon benötigt mind. PHP ###version###!
