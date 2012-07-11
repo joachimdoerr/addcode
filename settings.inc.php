@@ -1,6 +1,6 @@
 <?php
 /*
-uninstall.inc.php
+settings.inc.php
 
 @copyright Copyright (c) 2012 by Doerr Softwaredevelopment
 @author mail[at]joachim-doerr[dot]com Joachim Doerr
@@ -9,9 +9,8 @@ uninstall.inc.php
 @version 2.0.1
 */
 
-// ADDON IDENTIFIER AUS GET PARAMS
+// DYN SETTINGS
 ////////////////////////////////////////////////////////////////////////////////
-$mypage = rex_request('addonname','string');
-
-
-$REX['ADDON']['install'][$mypage] = 0;
+// --- DYN
+$REX["ADDON"]["settings"]["addcode"]["diversity_path"] = "site/include/";
+// --- /DYN

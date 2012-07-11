@@ -2,51 +2,80 @@
 /*
 config.inc.php
 
-@copyright  Copyright (c) 2012 by Doerr Softwaredevelopment
-@author     Joachim Doerr <mail@doerr-softwaredevelopment.com>
-@version    $Id$
+@copyright Copyright (c) 2012 by Doerr Softwaredevelopment
+@author mail[at]joachim-doerr[dot]com Joachim Doerr
+
+@package redaxo4
+@version 2.0.1
 */
 
-$mypage = "addcode";
+// ADDON IDENTIFIER AUS ORDNERNAMEN ABLEITEN
+////////////////////////////////////////////////////////////////////////////////
+$strAddonName = "addcode";
+$strAddonPath = $REX['INCLUDE_PATH'].'/addons/'.$strAddonName;
 
-$strAddonPath = '';
-$strAddonPath = $REX['INCLUDE_PATH'].'/addons/'.$mypage;
 
-$REX['ADDON']['page'][$mypage] = array($mypage);
-$REX['ADDON']['version'][$mypage] = "1.1";
-$REX['ADDON']['author'][$mypage] = "Joachim Doerr";
-$REX['ADDON']['supportpage'][$mypage] = 'forum.redaxo.de';
+// ADDON REX COMMONS
+////////////////////////////////////////////////////////////////////////////////
+$REX['ADDON']['rxid'][$strAddonName] = '995';
+$REX['ADDON']['page'][$strAddonName] = $strAddonName;
+$REX['ADDON']['name'][$strAddonName] = $strAddonName;
+$REX['ADDON'][$strAddonName]['VERSION'] = array('VERSION' => 2, 'MINORVERSION' => 0, 'SUBVERSION' => 1);
 
-include($strAddonPath."/functions/functions.getfilenames.inc.php");
+$REX['ADDON']['version'][$strAddonName]     = implode('.', $REX['ADDON'][$strAddonName]['VERSION']);
+$REX['ADDON']['author'][$strAddonName]      = 'Joachim Doerr';
+$REX['ADDON']['supportpage'][$strAddonName] = 'forum.redaxo.de';
 
-if ($REX['REDAXO'] === true) { $devpath = '../'; } else { $devpath = ''; }
+$REX['ADDON']['perm'][$strAddonName] = $strAddonName.'[]';	//Allows to add this addon as Startpage
+$REX['EXTRAPERM'][] = $strAddonName.'[settings]';	  //Allows Addon specific restrictions (i.e. for Plugins)
 
-$strClassDir = $devpath."site/include/classes/";
-$strFunctionsDir = $devpath."site/include/functions/";
 
-if (file_exists($strClassDir) && is_dir($strClassDir)) { $arrAdd['inc'][] = getfilenames($strClassDir); }
-if (file_exists($strFunctionsDir) && is_dir($strFunctionsDir)) { $arrAdd['inc'][] = getfilenames($strFunctionsDir); }
+// INCLUDES GLOBAL
+////////////////////////////////////////////////////////////////////////////////
+require_once( $strAddonPath .'/settings.inc.php' );
 
-$arrAdd['inc'][] = getfilenames($strAddonPath."/include/classes/");
-$arrAdd['inc'][] = getfilenames($strAddonPath."/include/functions/");
 
-foreach ($arrAdd['inc'] as $arrAdd['inc_files']) {
-  if (count($arrAdd['inc_files'])>0) {
-    foreach ($arrAdd['inc_files'] as $arrAdd['file_id']=>$arrAdd['file_name']) {
-      
-      unset($arrAdd['itis']);
-      // chmod($arrAdd['file_name'],0777);
-      
-      if (strpos(basename($arrAdd['file_name']), "frontend") > 0) { $arrAdd['itis']['frontend'] = true; } else { $arrAdd['itis']['frontend'] = false; }
-      if (strpos(basename($arrAdd['file_name']), "backend") > 0) { $arrAdd['itis']['backend'] = true; } else { $arrAdd['itis']['backend'] = false; }
-      if (strpos(basename($arrAdd['file_name']), "global") > 0) { $arrAdd['itis']['global'] = true; } else { $arrAdd['itis']['global'] = false; }
-      
-      if ($arrAdd['itis']['frontend'] === true || $arrAdd['itis']['global'] === true) {
-        if ($REX['REDAXO'] !== true) include_once($arrAdd['file_name']);
-      }
-      if ($arrAdd['itis']['backend'] === true || $arrAdd['itis']['global'] === true) {
-        if ($REX['REDAXO'] === true) include_once($arrAdd['file_name']);
-      }
+// SET DEFINE AND DEFAULTS
+////////////////////////////////////////////////////////////////////////////////
+$arrPaths = array(0 => $REX['ADDON']['settings']['addcode']['diversity_path'], 1 => $strAddonPath."/include/");
+$arrLoadingKeys = array(0 => 'frontend', 1 => 'global');
+
+
+// REDAXO BACKEND
+////////////////////////////////////////////////////////////////////////////////
+if ($REX['REDAXO'] === true)
+{
+  // LOAD I18N FILE
+  ////////////////////////////////////////////////////////////////////////////////
+  $I18N->appendFile(dirname(__FILE__) . '/lang/');
+  
+  // ADDON MENU
+  ////////////////////////////////////////////////////////////////////////////////
+  if($REX['USER'])
+  {
+    if($REX['USER']->hasPerm($strAddonName.'[settings]'))
+    {
+      $REX['ADDON']['name'][$strAddonName] = $I18N->msg($strAddonName.'_name');
+    }
+  }
+  
+  // RESET DEFINE AND DEFAULTS
+  ////////////////////////////////////////////////////////////////////////////////
+  $arrPaths[0] = '../'.$REX['ADDON']['settings']['addcode']['diversity_path'];
+  $arrLoadingKeys[0] = 'backend';
+}
+
+
+// AUTO INCLUDE FUNCTIONS & CLASSES
+////////////////////////////////////////////////////////////////////////////////
+foreach ($arrLoadingKeys as $strKey)
+{
+  foreach ($arrPaths as $strPath)
+  {
+    if (file_exists($strPath) === true)
+    {
+      array_walk(glob("$strPath/classes/class.*.$strKey.inc.php"),create_function('$v,$i', 'return require_once($v);'));
+      array_walk(glob("$strPath/functions/function.*.$strKey.inc.php"),create_function('$v,$i', 'return require_once($v);'));
     }
   }
 }
