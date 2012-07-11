@@ -6,7 +6,7 @@ h3. Dateinamen
 
 Die Dateinamen müssen nach folgendem Schema aufgebaut sein "typ.name.ladeziel.inc.php" (typ = "classe" oder "function", name = Name der Datei -> beliebig, ladeziel = "frontend", "backend" oder "global").
 
-h5. Folgende Dateinamen wären also Zulässig:
+h5. Folgende Dateinamen wären also zulässig:
 
 * class.customnavigation.frontend.inc.php
 * class.customstruktur.backend.inc.php
@@ -32,3 +32,8 @@ Classes die geladen werden sollen müssen im Verzeichnis "/redaxo/include/addons
 h3. Custom Verzeichnis
 
 Es kann zusätzlich ein Verzeichnis gewählt werden aus welchem Functions und Classes geladen werden, dieses Verzeichnis kann ein Redaxouser mit entsprechenden Berechtigungen unter "Addcode" Settings definieren, das Verzeichnis wird vom Dokument-Root aus gesetzt, dabei muss immer nach dem Ordnernamen ein "/" gesetzt werden. Der Ordner "site/include/" ist vordefiniert. Es können nur dann Dateien geladen werden wenn sich in dem Custom Verzeichnis die Unterverzeichnisse "functions/" und "classes/" befinden. Die darin befindlichen Dateien werden dann daraus dann geladen wenn sie wie bereits beschriebenen bennant werden.
+
+h2. Todo
+
+* Demo Classes und Functions anlegen und Demo in die Hilfe und Info Datei einbauen.
+* Diverse sinnvolle Classes und Functions hinzufügen.
