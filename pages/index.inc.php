@@ -9,6 +9,12 @@ index.inc.php
 @version 2.0.1
 */
 
+// ADDON IDENTIFIER
+////////////////////////////////////////////////////////////////////////////////
+$strAddonName = 'mform';
+$strAddonPath = $REX['INCLUDE_PATH'].'/addons/'.$strAddonName.'/';
+
+
 // GET PARAMS
 ////////////////////////////////////////////////////////////////////////////////
 $strPage      = rex_request('page', 'string', $strAddonName);
