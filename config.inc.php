@@ -12,7 +12,7 @@ config.inc.php
 // ADDON IDENTIFIER AUS ORDNERNAMEN ABLEITEN
 ////////////////////////////////////////////////////////////////////////////////
 $strAddonName = "addcode";
-$strAddonPath = $REX['INCLUDE_PATH'].'/addons/'.$strAddonName;
+$strAddonPath = $REX['INCLUDE_PATH']. '/addons/' .$strAddonName;
 
 
 // ADDON REX COMMONS
@@ -37,7 +37,7 @@ require_once( $strAddonPath .'/settings.inc.php' );
 
 // SET DEFINE AND DEFAULTS
 ////////////////////////////////////////////////////////////////////////////////
-$arrPaths = array(0 => $REX['ADDON']['settings']['addcode']['diversity_path'], 1 => $strAddonPath."/include/");
+$arrPaths = array(0 => $REX['ADDON']['settings']['addcode']['diversity_path'], 1 => $strAddonPath. '/include/');
 $arrLoadingKeys = array(0 => 'frontend', 1 => 'global');
 
 
@@ -61,7 +61,7 @@ if ($REX['REDAXO'] === true)
   
   // RESET DEFINE AND DEFAULTS
   ////////////////////////////////////////////////////////////////////////////////
-  $arrPaths[0] = '../'.$REX['ADDON']['settings']['addcode']['diversity_path'];
+  $arrPaths[0] = '../' .$REX['ADDON']['settings']['addcode']['diversity_path'];
   $arrLoadingKeys[0] = 'backend';
 }
 
