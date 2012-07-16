@@ -12,5 +12,5 @@ settings.inc.php
 // DYN SETTINGS
 ////////////////////////////////////////////////////////////////////////////////
 // --- DYN
-$REX["ADDON"]["settings"]["addcode"]["diversity_path"] = "site/include/";
+$REX["ADDON"]["settings"]["addcode"]["diversity_path"] = "/site/include/";
 // --- /DYN
