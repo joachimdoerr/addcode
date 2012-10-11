@@ -11,7 +11,7 @@ index.inc.php
 
 // ADDON IDENTIFIER
 ////////////////////////////////////////////////////////////////////////////////
-$strAddonName = 'mform';
+$strAddonName = 'addcode';
 $strAddonPath = $REX['INCLUDE_PATH'].'/addons/'.$strAddonName.'/';
 
 
