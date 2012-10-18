@@ -11,9 +11,10 @@ h5. Folgende Dateinamen wären also zulässig:
 * class.customnavigation.frontend.inc.php
 * class.customstruktur.backend.inc.php
 * class.taggin.global.inc.php
-* function.getfiletype.global.inc.php
-* function.getpreviewimage.backend.inc.php
 * function.getimagestoarray.frontend.inc.php
+* function.getpreviewimage.backend.inc.php
+* function.getfiletype.global.inc.php
+
 
 h5. Folgende Dateinamen würden ignoriert:
 
@@ -23,15 +24,15 @@ h5. Folgende Dateinamen würden ignoriert:
 
 h3. Laden von Functions
 
-Functions die geladen werden sollen müssen im Verzeichnis "/redaxo/include/addons/addcode/include/functions/" abgelegt werden und wie bereits beschriebenen benannt werden.
+Functions die geladen werden sollen müssen im Verzeichnis "/redaxo/include/addons/addcode/include/functions/" abgelegt werden und wie bereits beschriebenen benannt sein.
 
 h3. Laden von Classes
 
-Classes die geladen werden sollen müssen im Verzeichnis "/redaxo/include/addons/addcode/include/classes/" abgelegt werden und wie bereits beschriebenen benannt werden.
+Classes die geladen werden sollen müssen im Verzeichnis "/redaxo/include/addons/addcode/include/classes/" abgelegt werden und wie bereits beschriebenen benannt sein.
 
 h3. Custom Verzeichnis
 
-Es kann zusätzlich ein Verzeichnis gewählt werden aus welchem Functions und Classes geladen werden, dieses Verzeichnis kann ein Redaxouser mit entsprechenden Berechtigungen unter "Addcode" Settings definieren, das Verzeichnis wird vom Dokument-Root aus gesetzt, dabei muss immer nach dem Ordnernamen ein "/" gesetzt werden. Der Ordner "site/include/" ist vordefiniert. Es können nur dann Dateien geladen werden wenn sich in dem Custom Verzeichnis die Unterverzeichnisse "functions/" und "classes/" befinden. Die darin befindlichen Dateien werden dann daraus dann geladen wenn sie wie bereits beschriebenen bennant werden.
+Es kann zusätzlich ein Verzeichnis gewählt werden aus welchem Functions und Classes geladen werden, dieses Verzeichnis kann ein Redaxouser mit entsprechenden Berechtigungen unter "Addcode" Settings definieren, das Verzeichnis wird vom Dokument-Root aus gesetzt, dabei muss immer nach dem Ordnernamen ein "/" gesetzt werden. Der Ordner "site/include/" ist vordefiniert. Es werden nur dann Dateien geladen wenn sich in dem Custom Verzeichnis die Unterverzeichnisse "functions/" und "classes/" befinden. Die darin befindlichen Dateien werden dann daraus geladen wenn sie wie bereits beschriebenen bennant sind.
 
 h2. Todo
 
