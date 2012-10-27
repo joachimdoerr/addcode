@@ -17,9 +17,21 @@ $strAddonPath = $REX['INCLUDE_PATH'].'/addons/'.$strAddonName.'/';
 
 // GET PARAMS
 ////////////////////////////////////////////////////////////////////////////////
-$strPage      = rex_request('page', 'string', $strAddonName);
-$strFunc      = rex_request('func', 'string');
-$id           = rex_request('id', 'int');
+$strPage = rex_request('page', 'string', $strAddonName);
+$subpage = rex_request('subpage', 'string');
+$strFunc = rex_request('func', 'string');
+$id      = rex_request('id', 'int');
+
+// BACKEND CSS
+////////////////////////////////////////////////////////////////////////////////
+$includes = '
+<!-- ADDCODE -->
+  <link rel="stylesheet" type="text/css" href="../files/addons/addcode/backend.css" media="screen, projection, print" />
+<!-- /ADDCODE -->
+';
+$include_func = 'return $params["subject"].\''.$includes.'\';';
+rex_register_extension('PAGE_HEADER', create_function('$params',$include_func));
+
 
 
 // REX BACKEND LAYOUT TOP
@@ -34,9 +46,19 @@ rex_title($I18N->msg($strAddonName.'_title'), $REX['ADDON']['pages'][$strAddonNa
 
 // INCLUDE SUBPAGE
 /////////////////////////////////////////////////////////////////////////////
-require_once( $strAddonPath . '/pages/site.information.inc.php' );
-require_once( $strAddonPath . '/pages/site.settings.inc.php' );
+switch($subpage)
+{
+  case 'settings' :
+  case 'plugins' :
+  case 'information' :
+    break;
 
+  default:
+    $subpage = 'information';
+    break;
+}
+
+require_once( $strAddonPath . '/pages/site.'.$subpage.'.inc.php' );
 
 // REX BACKEND LAYOUT BOTTOM
 //////////////////////////////////////////////////////////////////////////////

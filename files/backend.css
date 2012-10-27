@@ -1,0 +1,175 @@
+/**
+ * Addcode Addon
+ *
+ * @package redaxo 4.3.x/4.4.x
+ * @version
+ */
+
+/* ADDON HEADLINE ----------------------------------------------------------- */
+span.addonversion {
+  font-size:10px;
+  color:silver;
+  }
+
+/* ADDON CHAPTER-LINKS */
+a.jsopenwin,
+a.blank,
+span.jsopenwin {
+  padding-right:16px;
+  background:url('jsopenwin.gif') no-repeat 100% 0 ;
+  }
+
+/* ADDON CONTENT ------------------------------------------------------------ */
+.addcode-plugins .rex-addon-content {
+  padding-left:14px;
+  padding-right:14px;
+  line-height:1.3;
+  }
+
+.addcode-plugins .rex-addon-content .rex-warning p {
+  font-size:10px;
+  margin:0;
+  }
+
+.addcode-plugins .rex-addon-content h1 {
+  color:#14568A;
+  font-size:18px;
+  border-bottom:1px solid #DFE9E9;
+  margin:26px 0 10px 0;
+  padding:0 0 2px 0;
+  }
+
+.addcode-plugins .rex-addon-content h1:first-child,
+.addcode-plugins .rex-addon-content #setup h1:first-child{
+  margin:0 0 10px 0;
+  }
+
+.addcode-plugins .rex-addon-content h2 {
+  font-size:15px;
+  margin:2px 0 10px 0;
+  padding:0;
+  }
+
+.addcode-plugins .rex-addon-content h3 {
+  font-size:13px;
+  margin:2px 0 10px 0;
+  padding:0;
+  }
+
+.addcode-plugins .rex-addon-content h4 {
+  font-size:12px;
+  margin:2px 0 10px 0;
+  padding:0;
+  }
+
+.addcode-plugins .rex-addon-content h5 {
+  font-size:11px;
+  margin:2px 0 10px 0;
+  padding:0;
+  }
+
+.addcode-plugins .rex-addon-content cite,
+.addcode-plugins .rex-addon-content code,
+.addcode-plugins .rex-addon-content pre {
+  color:red;
+  font-family:monospace;
+  font-style:normal;
+  font-size:12px;
+  }
+
+.addcode-plugins .rex-addon-content pre {
+  overflow:auto;
+  border:1px solid #CBCBCB;
+  background:#DFE9E9;
+  margin:2px 4px 8px 0;
+  padding:8px;
+  line-height:12px;
+  }
+
+.addcode-plugins .rex-addon-content pre code {
+  color:#0000BB;
+}
+
+.addcode-plugins .rex-addon-content hr {
+  height:1px;
+  border:0;
+  border-top:1px solid silver;
+  margin:8px 0;
+  padding:0;
+  }
+
+.addcode-plugins .xform-plugin .rex-form {
+  margin-top:8px;
+  margin-left:-14px;
+  width:717px;
+  }
+
+.addcode-plugins .xform-plugin .rex-form-wrapper {
+  padding-left:14px;
+  width:701px;
+  }
+
+.addcode-plugins .xform-plugin legend.xform-plugin-help {
+  background:#DFE9E9;
+  background:red;
+  }
+
+.addcode-plugins cite,
+.addcode-plugins code,
+.addcode-plugins pre {
+  color:blue;
+  font-family:monospace;
+  font-style:normal;
+  font-size:12px;
+  }
+
+.addcode-plugins pre {
+  overflow:auto;
+  border:1px dashed #C0C0C0;
+  background:#FAF9F5;
+  margin:2px 4px 8px 0;
+  padding:8px;
+  line-height:12px;
+  }
+
+.addcode-plugins hr {
+  height:1px;
+  border:0;
+  border-top:1px solid silver;
+  margin:8px 0;
+  padding:0;
+  }
+
+.xform-description:hover code.xform-form-code {
+  color:red;
+  }
+
+/* CLASS CODE */
+code.xform-form-code {
+  font-family:monospace;
+  font-size:12px;
+  /*letter-spacing:-1px;*/
+  color:green
+  }
+code.xform-form-code:hover,
+code.xform-form-code:hover a{
+  color:red;
+  }
+code.xform-form-code a:hover {
+  color:black;
+  }
+
+/*REDMINE RSS*/
+
+.addcode-plugins ul.redmine-feed {
+  list-style-type:none;
+}
+
+.addcode-plugins ul.redmine-feed li {
+  background:none;
+  border:0;
+  padding:0;
+}
+.addcode-plugins ul.redmine-feed .redmine-date {
+	margin-right:15px;
+}

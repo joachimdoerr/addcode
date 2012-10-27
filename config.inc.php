@@ -48,7 +48,7 @@ if ($REX['REDAXO'] === true)
   // LOAD I18N FILE
   ////////////////////////////////////////////////////////////////////////////////
   $I18N->appendFile(dirname(__FILE__) . '/lang/');
-  
+
   // ADDON MENU
   ////////////////////////////////////////////////////////////////////////////////
   if($REX['USER'])
@@ -56,9 +56,35 @@ if ($REX['REDAXO'] === true)
     if($REX['USER']->hasPerm($strAddonName.'[settings]'))
     {
       $REX['ADDON']['name'][$strAddonName] = $I18N->msg($strAddonName.'_name');
+
     }
   }
-  
+
+      $infoPage = new rex_be_page($I18N->msg($strAddonName.'_information'), array(
+      'page'    => $strAddonName,
+      'subpage' =>'information'));
+      $infoPage->setHref('index.php?page='.$strAddonName.'&subpage=information');
+
+      $settingsPage = new rex_be_page($I18N->msg($strAddonName.'_settings'), array(
+      'page'    => $strAddonName,
+      'subpage' =>'settings'));
+      $settingsPage->setHref('index.php?page='.$strAddonName.'&subpage=settings');
+
+      $REX['ADDON']['pages'][$strAddonName] = array (
+        $infoPage, $settingsPage
+      );
+
+      if(file_exists(dirname(__FILE__).'/plugins')!=false && is_dir(dirname(__FILE__).'/plugins')!=false)
+      {
+        $pluginsPage = new rex_be_page($I18N->msg($strAddonName.'_plugins'), array(
+            'page' => $strAddonName,
+            'subpage' => 'plugins'
+          )
+        );
+        $pluginsPage->setHref('index.php?page=addcode&subpage=plugins');
+        $REX['ADDON']['pages'][$strAddonName][] = $pluginsPage;
+      }
+
   // RESET DEFINE AND DEFAULTS
   ////////////////////////////////////////////////////////////////////////////////
   $arrLoadingKeys[0] = 'backend';
