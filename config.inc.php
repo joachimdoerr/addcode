@@ -99,8 +99,9 @@ foreach ($arrLoadingKeys as $strKey)
   {
     if (file_exists($strPath) === true)
     {
-      array_walk(glob("$strPath/classes/class.*.$strKey.inc.php"),create_function('$v,$i', 'return require_once($v);'));
-      array_walk(glob("$strPath/functions/function.*.$strKey.inc.php"),create_function('$v,$i', 'return require_once($v);'));
+      array_walk(glob("$strPath/classes/class.*.$strKey.*php"),create_function('$v,$i', 'return require_once($v);'));
+      array_walk(glob("$strPath/functions/function.*.$strKey.*php"),create_function('$v,$i', 'return require_once($v);'));
+
     }
   }
 }
