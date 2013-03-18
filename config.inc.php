@@ -37,7 +37,7 @@ require_once( $strAddonPath .'/settings.inc.php' );
 
 // SET DEFINE AND DEFAULTS
 ////////////////////////////////////////////////////////////////////////////////
-$arrPaths = array(0 => $_SERVER['DOCUMENT_ROOT'].$REX['ADDON']['settings']['addcode']['diversity_path'], 1 => $strAddonPath."/include/");
+$arrPaths = array(0 => $REX['INCLUDE_PATH'].'/../../'.$REX['ADDON']['settings']['addcode']['diversity_path'], 1 => $strAddonPath."/include/");
 $arrLoadingKeys = array(0 => 'frontend', 1 => 'global');
 
 
@@ -48,7 +48,7 @@ if ($REX['REDAXO'] === true)
   // LOAD I18N FILE
   ////////////////////////////////////////////////////////////////////////////////
   $I18N->appendFile(dirname(__FILE__) . '/lang/');
-
+  
   // ADDON MENU
   ////////////////////////////////////////////////////////////////////////////////
   if($REX['USER'])
@@ -56,35 +56,34 @@ if ($REX['REDAXO'] === true)
     if($REX['USER']->hasPerm($strAddonName.'[settings]'))
     {
       $REX['ADDON']['name'][$strAddonName] = $I18N->msg($strAddonName.'_name');
-
     }
   }
-
-      $infoPage = new rex_be_page($I18N->msg($strAddonName.'_information'), array(
-      'page'    => $strAddonName,
-      'subpage' =>'information'));
-      $infoPage->setHref('index.php?page='.$strAddonName.'&subpage=information');
-
-      $settingsPage = new rex_be_page($I18N->msg($strAddonName.'_settings'), array(
-      'page'    => $strAddonName,
-      'subpage' =>'settings'));
-      $settingsPage->setHref('index.php?page='.$strAddonName.'&subpage=settings');
-
-      $REX['ADDON']['pages'][$strAddonName] = array (
-        $infoPage, $settingsPage
-      );
-
-      if(file_exists(dirname(__FILE__).'/plugins')!=false && is_dir(dirname(__FILE__).'/plugins')!=false)
-      {
-        $pluginsPage = new rex_be_page($I18N->msg($strAddonName.'_plugins'), array(
-            'page' => $strAddonName,
-            'subpage' => 'plugins'
-          )
-        );
-        $pluginsPage->setHref('index.php?page=addcode&subpage=plugins');
-        $REX['ADDON']['pages'][$strAddonName][] = $pluginsPage;
-      }
-
+  
+  $infoPage = new rex_be_page($I18N->msg($strAddonName.'_information'), array(
+  'page'    => $strAddonName,
+  'subpage' =>'information'));
+  $infoPage->setHref('index.php?page='.$strAddonName.'&subpage=information');
+  
+  $settingsPage = new rex_be_page($I18N->msg($strAddonName.'_settings'), array(
+  'page'    => $strAddonName,
+  'subpage' =>'settings'));
+  $settingsPage->setHref('index.php?page='.$strAddonName.'&subpage=settings');
+  
+  $REX['ADDON']['pages'][$strAddonName] = array (
+    $infoPage, $settingsPage
+  );
+  
+  if(file_exists(dirname(__FILE__).'/plugins')!=false && is_dir(dirname(__FILE__).'/plugins')!=false)
+  {
+    $pluginsPage = new rex_be_page($I18N->msg($strAddonName.'_plugins'), array(
+        'page' => $strAddonName,
+        'subpage' => 'plugins'
+      )
+    );
+    $pluginsPage->setHref('index.php?page=addcode&subpage=plugins');
+    $REX['ADDON']['pages'][$strAddonName][] = $pluginsPage;
+  }
+  
   // RESET DEFINE AND DEFAULTS
   ////////////////////////////////////////////////////////////////////////////////
   $arrLoadingKeys[0] = 'backend';
@@ -99,9 +98,17 @@ foreach ($arrLoadingKeys as $strKey)
   {
     if (file_exists($strPath) === true)
     {
-      array_walk(glob("$strPath/classes/class.*.$strKey.*php"),create_function('$v,$i', 'return require_once($v);'));
-      array_walk(glob("$strPath/functions/function.*.$strKey.*php"),create_function('$v,$i', 'return require_once($v);'));
-
+      $arrClasses = glob("$strPath/classes/class.*.$strKey.*php");
+      $arrFunctions = glob("$strPath/functions/function.*$strKey*php");
+      
+      if (is_array($arrClasses) === true)
+      {
+        array_walk($arrClasses,create_function('$v,$i', 'return require_once($v);')); 
+      }
+      if (is_array($arrFunctions) === true)
+      {
+        array_walk($arrFunctions,create_function('$v,$i', 'return require_once($v);')); 
+      }
     }
   }
 }
