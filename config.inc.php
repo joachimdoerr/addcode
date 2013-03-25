@@ -20,7 +20,7 @@ $strAddonPath = $REX['INCLUDE_PATH']. '/addons/' .$strAddonName;
 $REX['ADDON']['rxid'][$strAddonName] = '995';
 $REX['ADDON']['page'][$strAddonName] = $strAddonName;
 $REX['ADDON']['name'][$strAddonName] = $strAddonName;
-$REX['ADDON'][$strAddonName]['VERSION'] = array('VERSION' => 2, 'MINORVERSION' => 0, 'SUBVERSION' => 1);
+$REX['ADDON'][$strAddonName]['VERSION'] = array('VERSION' => 2, 'MINORVERSION' => 0, 'SUBVERSION' => 2);
 
 $REX['ADDON']['version'][$strAddonName]     = implode('.', $REX['ADDON'][$strAddonName]['VERSION']);
 $REX['ADDON']['author'][$strAddonName]      = 'Joachim Doerr';

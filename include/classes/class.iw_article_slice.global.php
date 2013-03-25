@@ -93,4 +93,3 @@ WHERE article_id='.$article_id;
   }
 
 }
-?>
