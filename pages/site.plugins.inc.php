@@ -37,11 +37,6 @@ foreach($ac_plugins['status'] as $this_plugin => $status)
 }
 
 
-// INCLUDE PARSER FUNCTION
-////////////////////////////////////////////////////////////////////////////////
-require_once $REX['INCLUDE_PATH'].'/addons/addcode/functions/function.imm_incparse.inc.php';
-
-
 // PLUGINS NAVI
 $pluginnav = $pluginnav == '' ? 'Es sind keine Plugins installiert/aktiviert.' : $pluginnav;
 echo '
@@ -104,7 +99,7 @@ if(file_exists($help))
 
     <div class="rex-addon-content">
 
-    '.imm_incparse($plugin_root,$plugin.'/pages/help.textile','textile',true).'
+    '.addcode_incparse($plugin_root,$plugin.'/pages/help.textile','textile',true).'
 
     </div><!-- /rex-addon-content -->
   </div><!-- /rex-addon-output -->
