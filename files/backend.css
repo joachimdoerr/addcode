@@ -35,6 +35,12 @@ span.jsopenwin {
   margin:0;
   }
 
+.addcode-plugins .rex-addon-content p.author {
+  float:right;
+  font-size:11px;
+  color:gray;
+  }
+
 .addcode-plugins .rex-addon-content h1 {
   color:#14568A;
   font-size:18px;
@@ -152,7 +158,6 @@ span.jsopenwin {
 code.xform-form-code {
   font-family:monospace;
   font-size:12px;
-  /*letter-spacing:-1px;*/
   color:green
   }
 code.xform-form-code:hover,
