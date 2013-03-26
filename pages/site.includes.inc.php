@@ -53,7 +53,7 @@ echo '
 ////////////////////////////////////////////////////////////////////////////////
 $includes = $type == 'classes'
           ? (array) glob($type_root.'class.*.'.$scope.'.php')
-          : (array) glob($type_root.'function.*.'.$scope.'.php') ;         FB::log($includes,' $includes');
+          : (array) glob($type_root.'function.*.'.$scope.'.php');
 
 foreach($includes as $include)
 {
