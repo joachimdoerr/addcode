@@ -1,13 +1,14 @@
 <?php
-/*
-site.settings.inc.php
-
-@copyright Copyright (c) 2012 by Doerr Softwaredevelopment
-@author mail[at]joachim-doerr[dot]com Joachim Doerr
-
-@package redaxo4
-@version 2.0.1
-*/
+/**
+ * site.settings.inc.php
+ *
+ * @copyright Copyright (c) 2012 by Doerr Softwaredevelopment
+ * @author mail[at]joachim-doerr[dot]com Joachim Doerr
+ * @author (contributing) https://github.com/jdlx/
+ *
+ * @package redaxo 4.4.x/4.5.x
+ * @version 2.1.0
+ */
 
 // SAVE SETTINGS ACTION
 ////////////////////////////////////////////////////////////////////////////////
@@ -15,7 +16,7 @@ if ($strFunc == 'update')
 {
   $DYN  = '$REX["ADDON"]["settings"]["'.$strAddonName.'"]["diversity_path"] = "'.rex_post('diversity_path', 'string').'";';
   $PATH = $strAddonPath.'/settings.inc.php';
-  
+
   if(rex_replace_dynamic_contents($PATH, $DYN))
   {
     // UPDATE REX
@@ -43,7 +44,7 @@ echo '
           <div class="rex-form-row">
             <p class="rex-form-text">
               <label for="diversity_path">'.$I18N->msg($strAddonName.'_diversity_path').':</label>
-              <input type="text" id="diversity_path" name="diversity_path" value="'.$REX['ADDON']['settings'][$strAddonName]['diversity_path'].'" />  
+              <input type="text" id="diversity_path" name="diversity_path" value="'.$REX['ADDON']['settings'][$strAddonName]['diversity_path'].'" />
             </p>
           </div>
           <div class="rex-form-row">

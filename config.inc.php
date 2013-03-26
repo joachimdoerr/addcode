@@ -1,13 +1,14 @@
 <?php
-/*
-config.inc.php
-
-@copyright Copyright (c) 2012 by Doerr Softwaredevelopment
-@author mail[at]joachim-doerr[dot]com Joachim Doerr
-
-@package redaxo4
-@version 2.0.1
-*/
+/**
+ * config.inc.php
+ *
+ * @copyright Copyright (c) 2012 by Doerr Softwaredevelopment
+ * @author mail[at]joachim-doerr[dot]com Joachim Doerr
+ * @author (contributing) https://github.com/jdlx/
+ *
+ * @package redaxo 4.4.x/4.5.x
+ * @version 2.1.0
+ */
 
 // ADDON IDENTIFIER AUS ORDNERNAMEN ABLEITEN
 ////////////////////////////////////////////////////////////////////////////////
@@ -19,8 +20,8 @@ $strAddonPath = $REX['INCLUDE_PATH']. '/addons/' .$strAddonName;
 ////////////////////////////////////////////////////////////////////////////////
 $REX['ADDON']['rxid'][$strAddonName] = '995';
 $REX['ADDON']['page'][$strAddonName] = $strAddonName;
-$REX['ADDON']['name'][$strAddonName] = $strAddonName;
-$REX['ADDON']['version'][$strAddonName]     = '2.0.2';
+$REX['ADDON']['name'][$strAddonName] = 'Addcode';
+$REX['ADDON']['version'][$strAddonName]     = '2.1.0';
 $REX['ADDON']['author'][$strAddonName]      = 'Joachim Doerr';
 $REX['ADDON']['supportpage'][$strAddonName] = 'forum.redaxo.de';
 

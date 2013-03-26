@@ -1,13 +1,14 @@
 <?php
-/*
-install.inc.php
-
-@copyright Copyright (c) 2012 by Doerr Softwaredevelopment
-@author mail[at]joachim-doerr[dot]com Joachim Doerr
-
-@package redaxo4
-@version 2.0.1
-*/
+/**
+ * install.inc.php
+ *
+ * @copyright Copyright (c) 2012 by Doerr Softwaredevelopment
+ * @author mail[at]joachim-doerr[dot]com Joachim Doerr
+ * @author (contributing) https://github.com/jdlx/
+ *
+ * @package redaxo 4.4.x/4.5.x
+ * @version 2.1.0
+ */
 
 // ADDON IDENTIFIER AUS GET PARAMS
 ////////////////////////////////////////////////////////////////////////////////

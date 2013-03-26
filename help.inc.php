@@ -1,13 +1,14 @@
 <?php
-/*
-help.inc.php
-
-@copyright Copyright (c) 2012 by Doerr Softwaredevelopment
-@author mail[at]joachim-doerr[dot]com Joachim Doerr
-
-@package redaxo4
-@version 2.0.1
-*/
+/**
+ * help.inc.php
+ *
+ * @copyright Copyright (c) 2012 by Doerr Softwaredevelopment
+ * @author mail[at]joachim-doerr[dot]com Joachim Doerr
+ * @author (contributing) https://github.com/jdlx/
+ *
+ * @package redaxo 4.4.x/4.5.x
+ * @version 2.1.0
+ */
 
 // ADDON IDENTIFIER
 ////////////////////////////////////////////////////////////////////////////////
@@ -29,7 +30,7 @@ if (!OOAddon::isAvailable($strAddonName))
 <p style="margin-bottom:15px;"><?php echo $I18N->msg('addcode_help_infotext_2'); ?></p>
 <p><?php echo $I18N->msg('addcode_help_infotext_3'); ?></p>
 <ul style="margin-left:20px;">
-<?php 
+<?php
 echo '
   <li>'. $I18N->msg('addcode_help_functionfile_name_1') .' oder '. $I18N->msg('addcode_help_classfile_name_1') .'</li>
   <li>'. $I18N->msg('addcode_help_functionfile_name_2') .' oder '. $I18N->msg('addcode_help_classfile_name_2') .'</li>

@@ -1,22 +1,21 @@
 <?php
-/*
-function.addcode_incparse.inc.php
-
-@copyright Copyright (c) 2012 by Doerr Softwaredevelopment
-@author mail[at]joachim-doerr[dot]com Joachim Doerr
-
-@package redaxo4
-@version 2.0.1
-*/
-
 /**
- * CONTENT PARSER FUNKTIONEN
- * @author rexdev.de
- * @package redaxo 4.3.x/4.4.x
+ * function.addcode_incparse.inc.php
+ *
+ * @copyright Copyright (c) 2012 by Doerr Softwaredevelopment
+ * @author mail[at]joachim-doerr[dot]com Joachim Doerr
+ * @author (contributing) https://github.com/jdlx/
+ *
+ * @package redaxo 4.4.x/4.5.x
+ * @version 2.1.0
  */
 
-// INCLUDE PARSER FUNCTION
-////////////////////////////////////////////////////////////////////////////////
+/**
+ * Include or parse content from various sources to HTML
+ *
+ * @author https://github.com/jdlx/
+ * @package redaxo 4.3.x/4.4.x
+ */
 function addcode_incparse($root, $source, $parsemode, $return=false)
 {
 
@@ -72,9 +71,14 @@ function addcode_incparse($root, $source, $parsemode, $return=false)
   echo $html;
 }
 
-// TEXTILE PARSER FUNCTION
-////////////////////////////////////////////////////////////////////////////////
-function addcode_textileparser($textile,$return=false)
+
+/**
+ * Parse Textile and return or echo
+ *
+ * @author https://github.com/jdlx/
+ * @package redaxo 4.3.x/4.4.x
+ */
+function addcode_textileparser($textile, $return=false)
 {
   $html = '';
 
@@ -82,9 +86,8 @@ function addcode_textileparser($textile,$return=false)
   {
     if($textile!='')
     {
-      $textile = htmlspecialchars_decode($textile);
-      $textile = str_replace("<br />","",$textile);
-      $textile = str_replace("&#039;","'",$textile);
+      $textile = htmlspecialchars_decode($textile,ENT_QUOTES);
+      $textile = str_replace('<br />','',$textile);
 
       $html = rex_lang_is_utf8()
             ? rex_a79_textile($textile)

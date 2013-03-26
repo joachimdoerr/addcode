@@ -1,10 +1,14 @@
 <?php
 /**
+ * site.includes.inc.php
  *
- * @package redaxo 4.3.x/4.4.x
- * @version 1.2.1
+ * @copyright Copyright (c) 2012 by Doerr Softwaredevelopment
+ * @author mail[at]joachim-doerr[dot]com Joachim Doerr
+ * @author (contributing) https://github.com/jdlx/
+ *
+ * @package redaxo 4.4.x/4.5.x
+ * @version 2.1.0
  */
-
 
 // PARAMS & ROOT DIR
 ////////////////////////////////////////////////////////////////////////////////
