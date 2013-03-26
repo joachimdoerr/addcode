@@ -45,25 +45,12 @@ include_once( $REX['INCLUDE_PATH'].'/layout/top.php' );
 
 // TITLE & SUBPAGE NAVIGATION
 //////////////////////////////////////////////////////////////////////////////
-rex_title($I18N->msg($strAddonName.'_title'), $REX['ADDON']['pages'][$strAddonName]);
+rex_title($I18N->msg($strAddonName.'_title').' <span>'.$REX['ADDON']['version'][$strAddonName].'<span>', $REX['ADDON']['pages'][$strAddonName]);
 
 
 // INCLUDE SUBPAGE
 /////////////////////////////////////////////////////////////////////////////
-switch($subpage)
-{
-  case 'settings' :
-  case 'plugins' :
-  case 'information' :
-  case 'includes' :
-    break;
-
-  default:
-    $subpage = 'information';
-    break;
-}
-
-require_once( $strAddonPath . '/pages/site.'.$subpage.'.inc.php' );
+require_once( $strAddonPath . '/pages/site.'. ( $subpage=='' ? 'information' : $subpage ) .'.inc.php' );
 
 // REX BACKEND LAYOUT BOTTOM
 //////////////////////////////////////////////////////////////////////////////

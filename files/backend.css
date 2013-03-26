@@ -6,10 +6,10 @@
  */
 
 /* ADDON HEADLINE ----------------------------------------------------------- */
-span.addonversion {
-  font-size:10px;
-  color:silver;
-  }
+div#rex-title h1 span {
+  color: #CBCBCB;
+  font-size: 0.5em;
+}
 
 /* ADDON CHAPTER-LINKS */
 a.jsopenwin,
