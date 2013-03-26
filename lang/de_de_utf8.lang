@@ -1,6 +1,8 @@
 addcode_name = Addcode
 addcode_title = Addcode
 addcode_settings = Einstellungen
+addcode_classes = Klassen
+addcode_functions = Funktionen
 addcode_information = Information
 addcode_plugins = Plugins
 addcode_save = Einstellungen speichern
