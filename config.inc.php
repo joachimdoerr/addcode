@@ -48,7 +48,7 @@ if ($REX['REDAXO'] === true)
   // LOAD I18N FILE
   ////////////////////////////////////////////////////////////////////////////////
   $I18N->appendFile(dirname(__FILE__) . '/lang/');
-  
+
   // ADDON MENU
   ////////////////////////////////////////////////////////////////////////////////
   if($REX['USER'])
@@ -58,21 +58,33 @@ if ($REX['REDAXO'] === true)
       $REX['ADDON']['name'][$strAddonName] = $I18N->msg($strAddonName.'_name');
     }
   }
-  
+
   $infoPage = new rex_be_page($I18N->msg($strAddonName.'_information'), array(
   'page'    => $strAddonName,
   'subpage' =>'information'));
   $infoPage->setHref('index.php?page='.$strAddonName.'&subpage=information');
-  
+
+  $classesPage = new rex_be_page($I18N->msg($strAddonName.'_classes'), array(
+  'page'    => $strAddonName,
+  'subpage' => 'includes',
+  'type'    => 'classes'));
+  $classesPage->setHref('index.php?page='.$strAddonName.'&subpage=includes&type=classes');
+
+  $functionsPage = new rex_be_page($I18N->msg($strAddonName.'_functions'), array(
+  'page'    => $strAddonName,
+  'subpage' => 'includes',
+  'type'    => 'functions'));
+  $functionsPage->setHref('index.php?page='.$strAddonName.'&subpage=includes&type=functions');
+
   $settingsPage = new rex_be_page($I18N->msg($strAddonName.'_settings'), array(
   'page'    => $strAddonName,
   'subpage' =>'settings'));
   $settingsPage->setHref('index.php?page='.$strAddonName.'&subpage=settings');
-  
+
   $REX['ADDON']['pages'][$strAddonName] = array (
-    $infoPage, $settingsPage
+    $infoPage, $classesPage, $functionsPage, $settingsPage
   );
-  
+
   if(file_exists(dirname(__FILE__).'/plugins')!=false && is_dir(dirname(__FILE__).'/plugins')!=false)
   {
     $pluginsPage = new rex_be_page($I18N->msg($strAddonName.'_plugins'), array(
@@ -83,7 +95,7 @@ if ($REX['REDAXO'] === true)
     $pluginsPage->setHref('index.php?page=addcode&subpage=plugins');
     $REX['ADDON']['pages'][$strAddonName][] = $pluginsPage;
   }
-  
+
   // RESET DEFINE AND DEFAULTS
   ////////////////////////////////////////////////////////////////////////////////
   $arrLoadingKeys[0] = 'backend';
@@ -100,14 +112,14 @@ foreach ($arrLoadingKeys as $strKey)
     {
       $arrClasses = glob("$strPath/classes/class.*.$strKey.*php");
       $arrFunctions = glob("$strPath/functions/function.*$strKey*php");
-      
+
       if (is_array($arrClasses) === true)
       {
-        array_walk($arrClasses,create_function('$v,$i', 'return require_once($v);')); 
+        array_walk($arrClasses,create_function('$v,$i', 'return require_once($v);'));
       }
       if (is_array($arrFunctions) === true)
       {
-        array_walk($arrFunctions,create_function('$v,$i', 'return require_once($v);')); 
+        array_walk($arrFunctions,create_function('$v,$i', 'return require_once($v);'));
       }
     }
   }

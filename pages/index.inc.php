@@ -33,6 +33,10 @@ $include_func = 'return $params["subject"].\''.$includes.'\';';
 rex_register_extension('PAGE_HEADER', create_function('$params',$include_func));
 
 
+// INCLUDE PARSER FUNCTION
+////////////////////////////////////////////////////////////////////////////////
+require_once $REX['INCLUDE_PATH'].'/addons/addcode/functions/function.addcode_incparse.inc.php';
+
 
 // REX BACKEND LAYOUT TOP
 //////////////////////////////////////////////////////////////////////////////
@@ -51,6 +55,7 @@ switch($subpage)
   case 'settings' :
   case 'plugins' :
   case 'information' :
+  case 'includes' :
     break;
 
   default:

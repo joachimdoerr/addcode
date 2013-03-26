@@ -1,0 +1,9 @@
+h1. Methods
+
+@iw_article_slice::get_slices_for_article($article_id, $clang_id, $ctype_id, $module_id);@
+
+return array of slice objects sorted by prio
+
+ <hr />
+
+p(author). Author: "Ingo Winter":https://github.com/ingowinter - winteringo[at]gmail.com Ingo Winter

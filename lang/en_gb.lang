@@ -1,6 +1,8 @@
 addcode_name = Addcode
 addcode_title = Addcode
 addcode_settings = Settings
+addcode_classes = Classes
+addcode_functions = Functions
 addcode_save = Save settings
 addcode_diversity_path = Diversity Pfad
 addcode_success_save = the settings have been saved.
