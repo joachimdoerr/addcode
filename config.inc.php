@@ -82,7 +82,7 @@ if ($REX['REDAXO'] === true)
   $settingsPage->setHref('index.php?page='.$strAddonName.'&subpage=settings');
 
   $REX['ADDON']['pages'][$strAddonName] = array (
-    $infoPage, $classesPage, $functionsPage, $settingsPage
+    $infoPage, $settingsPage, $classesPage, $functionsPage
   );
 
   if(file_exists(dirname(__FILE__).'/plugins')!=false && is_dir(dirname(__FILE__).'/plugins')!=false)
