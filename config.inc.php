@@ -116,11 +116,12 @@ foreach ($arrLoadingKeys as $strKey)
 
       if (is_array($arrClasses) === true)
       {
-        array_walk($arrClasses,create_function('$v,$i', 'return require_once($v);'));
+        array_walk($arrClasses,create_function('$file', 'return (is_file ( $file )) ? require_once($file) : false;')); 
+        
       }
       if (is_array($arrFunctions) === true)
       {
-        array_walk($arrFunctions,create_function('$v,$i', 'return require_once($v);'));
+        array_walk($arrFunctions,create_function('$file', 'return (is_file ( $file )) ? require_once($file) : false;')); 
       }
     }
   }
