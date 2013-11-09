@@ -1,6 +1,3 @@
-[submodule "plugins/rex_standards.addcode.plugin"]
-	path = plugins/rex_standards.addcode.plugin
-	url = git://github.com/jdlx/rex_standards.addcode.plugin.git
 [submodule "plugins/rex_socket.addcode.plugin/vendor/gharlan/redaxo4_socket"]
 	path = plugins/rex_socket.addcode.plugin/vendor/gharlan/redaxo4_socket
 	url = git://github.com/gharlan/redaxo4_socket.git
