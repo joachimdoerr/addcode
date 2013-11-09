@@ -1,0 +1,44 @@
+h1. Rex Standards Plugin
+
+Includes *class.rex_standards.inc.php* for access to common intl. standards (ISO etc.) related data & methods
+
+h1. Methods
+
+h2. @rex_standards::getTimezones()@
+
+Return array of PHP timezones
+see "http://pecl.php.net/get/timezonedb":http://pecl.php.net/get/timezonedb
+
+bc. array(
+      'Africa/Abidjan'                  ,
+      'Africa/Accra'                    ,
+      'Africa/Addis_Ababa'              ,
+      ...
+
+ <hr />
+
+h3. @rex_standards::getCountryCodes()@
+
+Return array of ISO 3166-* country codes, ccTLDs and translated country names (EN,DE,ES,FR,IT,PT)
+see "http://www.iso.org/iso/country_codes.htm":http://www.iso.org/iso/country_codes.htm
+
+bc. array(
+    'AE' => array(
+      'iso_3166_1_alpha_3' => 'ARE',
+      'iso_3166_1_numeric' => '784',
+      'ccTLD'              => '.ae',
+      'name_EN'            => 'United Arab Emirates',
+      'name_DE'            => 'Vereinigte Arabische Emirate',
+      'name_ES'            => 'Emiratos Árabes Unidos',
+      'name_FR'            => 'Émirats arabes unis',
+      'name_IT'            => 'Emirati Arabi Uniti',
+      'name_PT'            => 'Emiratos Árabes Unidos'
+      ),
+      ...
+
+h1. Additional files
+
+* *rex_country_codes.sql*
+dump containing the getCountryCodes() data
+* *db_to_class_dumper.php*
+script to dump the mysql data into the class
