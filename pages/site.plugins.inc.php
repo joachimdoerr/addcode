@@ -89,17 +89,36 @@ if(file_exists($form))
 
 // PLUGIN INFO WRAPPER
 ////////////////////////////////////////////////////////////////////////////////
-$help = $plugin_root.$plugin.'/pages/help.textile';
-if(file_exists($help))
+$help_textile = $plugin_root.$plugin.'/pages/help.textile';
+if(file_exists($help_textile))
 {
   echo '
   <div class="rex-addon-output addcode-plugins">
     <h2 class="rex-hl2" style="font-size:1.2em">Infos</h2>
-    <p style="float:right;color:gray;padding:16px 20px 0 0;">Version: '.$REX['ADDON']['plugins']['addcode']['version'][$plugin].'</p>
+    <p style="float:right;color:gray;padding:16px 20px 0 0;">Plugin Version: '.$REX['ADDON']['plugins']['addcode']['version'][$plugin].'</p>
 
     <div class="rex-addon-content">
 
     '.addcode_incparse($plugin_root,$plugin.'/pages/help.textile','textile',true).'
+
+    </div><!-- /rex-addon-content -->
+  </div><!-- /rex-addon-output -->
+  ';
+}
+
+$help_php = $plugin_root.$plugin.'/pages/help.inc.php';
+if(file_exists($help_php))
+{
+  echo '
+  <div class="rex-addon-output addcode-plugins">
+    <h2 class="rex-hl2" style="font-size:1.2em">Infos</h2>
+    <p style="float:right;color:gray;padding:16px 20px 0 0;">Plugin Version: '.$REX['ADDON']['plugins']['addcode']['version'][$plugin].'</p>
+
+    <div class="rex-addon-content">
+
+    ';
+    require_once($help_php);
+    echo '
 
     </div><!-- /rex-addon-content -->
   </div><!-- /rex-addon-output -->
