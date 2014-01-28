@@ -38,3 +38,8 @@ h3. Examples
 
 "(blank)$":https://github.com/punkave/phpQuery/blob/master/demo.php
 
+h3. Docs
+
+* "(blank)$":https://code.google.com/p/phpquery/wiki/Manual
+* "(blank)$":http://codingexplained.com/coding/php/manipulating-dom-documents-with-phpquery
+
