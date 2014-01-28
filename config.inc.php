@@ -9,7 +9,7 @@
  * @author (contributing) https://github.com/gregorharlan/
  *
  * @package redaxo 4.4.x/4.5.x
- * @version 2.2.0
+ * @version 2.3.0
  */
 
 // ADDON IDENTIFIER AUS ORDNERNAMEN ABLEITEN
@@ -23,7 +23,7 @@ $strAddonPath = $REX['INCLUDE_PATH']. '/addons/' .$strAddonName;
 $REX['ADDON']['rxid'][$strAddonName] = '995';
 $REX['ADDON']['page'][$strAddonName] = $strAddonName;
 $REX['ADDON']['name'][$strAddonName] = 'Addcode';
-$REX['ADDON']['version'][$strAddonName]     = '2.2.0';
+$REX['ADDON']['version'][$strAddonName]     = '2.3.0';
 $REX['ADDON']['author'][$strAddonName]      = 'Joachim Doerr';
 $REX['ADDON']['supportpage'][$strAddonName] = 'forum.redaxo.de';
 
@@ -116,12 +116,12 @@ foreach ($arrLoadingKeys as $strKey)
 
       if (is_array($arrClasses) === true)
       {
-        array_walk($arrClasses,create_function('$file', 'return (is_file ( $file )) ? require_once($file) : false;')); 
-        
+        array_walk($arrClasses,create_function('$file', 'return (is_file ( $file )) ? require_once($file) : false;'));
+
       }
       if (is_array($arrFunctions) === true)
       {
-        array_walk($arrFunctions,create_function('$file', 'return (is_file ( $file )) ? require_once($file) : false;')); 
+        array_walk($arrFunctions,create_function('$file', 'return (is_file ( $file )) ? require_once($file) : false;'));
       }
     }
   }
