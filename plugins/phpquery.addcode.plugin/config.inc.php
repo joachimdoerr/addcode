@@ -3,8 +3,9 @@
 * phpQuery - Addcode Plugin
 *
 * @package redaxo 4.5.x
-* @version 0.1.0
-* @author  jdlx c/o rexdev.de
+* @version 1.0.0
+* @author  Redaxo Plugin: http://rexdev.de
+* @author  Library:       https://github.com/punkave/phpQuery
 */
 
 
@@ -16,7 +17,7 @@ $myroot = $REX['INCLUDE_PATH'].'/addons/addcode/plugins/'.$myself;
 
 // REX COMMONS
 ////////////////////////////////////////////////////////////////////////////////
-$REX['ADDON']['version'][$myself]     = '0.1.0';
+$REX['ADDON']['version'][$myself]     = '1.0.0';
 $REX['ADDON']['title'][$myself]       = 'phpQuery';
 $REX['ADDON']['author'][$myself]      = 'rexdev.de';
 $REX['ADDON']['supportpage'][$myself] = 'forum.redaxo.de';

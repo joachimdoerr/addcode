@@ -1,0 +1,40 @@
+h1. phpQuery
+
+h3. Repo
+
+"(blank)$":https://github.com/punkave/phpQuery
+
+h3. Lib Version
+
+commit/["(blank)be908b64788a4ae6addd8f7bb61b7059c0369267":https://github.com/punkave/phpQuery/commit/be908b64788a4ae6addd8f7bb61b7059c0369267]
+
+h3. Readme
+
+This is phpQuery, a PHP port of jQuery selectors, super useful for DOM traversal
+and functional testing.
+
+It is originally by Tobiasz Cudnik:
+
+"(blank)$":http://code.google.com/p/phpquery/
+
+And was released under the MIT license.
+
+We've cloned it into github because no issues have been fixed upstream in the
+last two years and we needed to fix a bug relating to the serialize()
+method to get our functional tests to work. You can find our github
+repository here:
+
+"(blank)$":https://github.com/punkave/phpQuery
+
+"What did you fix?"
+
+Our initial commit includes a fix for the serialize() method, crucial to do
+form submissions (a big deal for functional testing). See the commit history
+in github for any later changes.
+
+- P'unk Avenue
+
+h3. Examples
+
+"(blank)$":https://github.com/punkave/phpQuery/blob/master/demo.php
+
