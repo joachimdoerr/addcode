@@ -27,5 +27,3 @@ $REX['PERM'][]                        = $myself.'[]';
 // MAIN
 ////////////////////////////////////////////////////////////////////////////////
 require_once $myroot.'/vendor/punkave/phpQuery/phpQuery/phpQuery.php';
-
-$doc = phpQuery::newDocument('<div/>');
