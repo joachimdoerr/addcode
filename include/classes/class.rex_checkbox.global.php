@@ -67,14 +67,22 @@ class rex_multicheckbox extends rex_select
   }
 
 
-  public function get($type = 'element')
+  public function get()
+  {
+    self::injectAssets('widget');
+
+    return self::getWidget();
+  }
+
+
+  public function getElement($type = 'widget')
   {
     self::injectAssets($type);
 
     switch($type)
     {
-      case'element':
-        return self::getElement();
+      case'widget':
+        return self::getWidget();
       break;
       case'label':
         return self::getLabel();
@@ -86,13 +94,13 @@ class rex_multicheckbox extends rex_select
         return self::getCSS();
       break;
       case'all':
-        return self::getCSS().PHP_EOL.self::getLabel().PHP_EOL.self::getElement().PHP_EOL.self::getJS();
+        return self::getCSS().PHP_EOL.self::getLabel().PHP_EOL.self::getWidget().PHP_EOL.self::getJS();
       break;
     }
   }
 
 
-  public function getElement()
+  public function getWidget()
   {
     $wrap_attrs = $this->attributes;
     unset($wrap_attrs['size']);
