@@ -1,0 +1,14 @@
+h1. rex_checkbox
+
+h3. Classes
+
+* rex_checkbox
+* rex_multicheckbox
+* rex_category_checkbox
+* rex_mediacategory_checkbox
+
+h3. Usage
+
+todo.. ;)
+
+p(author). Author: "jdlx":http://rexdev.de

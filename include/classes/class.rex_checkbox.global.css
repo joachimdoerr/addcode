@@ -1,0 +1,87 @@
+/**
+ * Redaxo Addon Addcode
+ *
+ * @copyright Copyright (c) 2012 by Doerr Softwaredevelopment
+ * @author mail[at]joachim-doerr[dot]com Joachim Doerr
+ *
+ * @author (contributing) https://github.com/jdlx/
+ * @author (contributing) https://github.com/gregorharlan/
+ *
+ * @package redaxo 4.4.x/4.5.x
+ * @version 2.4.0
+ */
+
+/**
+ * CLASS rex_multicheckbox CSS support file
+ *
+ * @author http://rexdev.de
+ *
+ * @package redaxo 4.5.x
+ * @version 0.5.0
+ */
+
+.rex-form-multicheckbox .multicheckbox {
+    display: block;
+    float: left;
+    background:#fff;
+    width: 456px;
+    padding: 5px 0 5px 5px;
+    max-height:300px;
+    overflow: auto;
+    border:1px solid silver;
+}
+
+.rex-form-multicheckbox > label {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.rex-form-multicheckbox .multicheckbox .optgroup {
+    display: block;
+    clear:both;
+}
+
+.rex-form-multicheckbox .multicheckbox .optgroup .optgroup-label {
+    display: block;
+    clear:both;
+    margin: 5px 0;
+    cursor: pointer;
+    font-style: italic;
+}
+.rex-form-multicheckbox .multicheckbox .optgroup:first-child .optgroup-label {
+    margin-top: 0;
+}
+.rex-form-multicheckbox .multicheckbox input,
+.rex-form-multicheckbox .multicheckbox .optgroup input {
+    float:left;
+    clear: both;
+    margin: 0 5px 0 0;
+    line-height: 14px;
+}
+.rex-form-multicheckbox .multicheckbox .optgroup input {
+    margin: 0 5px 0 10px;
+}
+.rex-form-multicheckbox .multicheckbox label,
+.rex-form-multicheckbox .multicheckbox .optgroup label {
+    display:inline-block;
+    float: none;
+    clear: none !important;
+    width:80% !important;
+    padding:0 !important;
+    margin:0;
+    line-height: 14px;
+
+}
+.rex-form-multicheckbox .multicheckbox.disabled label,
+.rex-form-multicheckbox .multicheckbox.disabled .optgroup label,
+.rex-form-multicheckbox .multicheckbox label.disabled,
+.rex-form-multicheckbox .multicheckbox .optgroup label.disabled {
+    color:silver;
+
+}
+.rex-form-multicheckbox > label:hover,
+.rex-form-multicheckbox > label:hover + .multicheckbox:not(.disabled) label,
+.rex-form-multicheckbox .multicheckbox:not(.disabled) .optgroup-label:hover,
+.rex-form-multicheckbox .multicheckbox:not(.disabled) .optgroup-label:hover ~ label,
+.rex-form-multicheckbox .multicheckbox:not(.disabled) label:hover {
+  color:#1895D7;
+}
