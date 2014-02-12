@@ -36,7 +36,7 @@ class rex_multicheckbox extends rex_select
   private $uid;
   public  $tooltip;
   public  $label;
-  static  $inject_assets;
+  private static  $inject_assets = true;
 
   function __construct()
   {
@@ -47,11 +47,10 @@ class rex_multicheckbox extends rex_select
 
   public function factory()
   {
-    $this->mode          = get_called_class();
-    $this->uid           = 'uid'.time();
-    $this->label         = get_called_class();
-    $this->tooltip       = 'CLICK: toggle children / DBLCLICK: check children';
-    self::$inject_assets = true;
+    $this->mode    = get_called_class();
+    $this->uid     = 'uid'.time();
+    $this->label   = get_called_class();
+    $this->tooltip = 'CLICK: toggle children / DBLCLICK: check children';
   }
 
 
@@ -102,6 +101,8 @@ class rex_multicheckbox extends rex_select
 
   public function getWidget()
   {
+    self::injectAssets('widget');
+
     $wrap_attrs = $this->attributes;
     unset($wrap_attrs['size']);
     unset($wrap_attrs['multiple']);
@@ -145,6 +146,8 @@ class rex_multicheckbox extends rex_select
 
   public function getLabel()
   {
+    self::injectAssets('label');
+
     if(!isset($this->attributes['id'])) {
       $this->attributes['id'] = $this->uid;
     }
@@ -222,14 +225,16 @@ class rex_multicheckbox extends rex_select
         'OUTPUT_FILTER',
         function($params)
         {
-          $head   = '<!-- rex_checkbox -->'.PHP_EOL.
+          $head   = PHP_EOL.
+                    '<!-- rex_checkbox CSS -->'.PHP_EOL.
                     '  <link rel="stylesheet" type="text/css" href="../files/addons/addcode/class.rex_checkbox.global.css" media="screen, projection, print" />'.PHP_EOL.
-                    '<!-- /rex_checkbox -->'.PHP_EOL;
+                    '<!-- /rex_checkbox CSS -->'.PHP_EOL;
           $params['subject'] = str_replace('</head>', $head.'</head>', $params['subject']);
 
-          $body   = '<!-- rex_checkbox -->'.PHP_EOL.
+          $body   = PHP_EOL.
+                    '<!-- rex_checkbox JS -->'.PHP_EOL.
                     '  <script src="../files/addons/addcode/class.rex_checkbox.global.js"></script>'.PHP_EOL.
-                    '<!-- /rex_checkbox -->'.PHP_EOL;
+                    '<!-- /rex_checkbox JS -->'.PHP_EOL;
           return str_replace('</body>', $body.'</body>', $params['subject']);
         }
       );
