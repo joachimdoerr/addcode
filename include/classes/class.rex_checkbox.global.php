@@ -21,15 +21,6 @@
  * @version 0.5.0
  */
 
-
-class rex_checkbox extends rex_multicheckbox
-{
-  function __construct() {
-    rex_multicheckbox::factory();
-  }
-}
-
-
 class rex_multicheckbox extends rex_select
 {
   private $mode;
@@ -246,6 +237,12 @@ class rex_multicheckbox extends rex_select
 } // class
 
 
+class rex_checkbox extends rex_multicheckbox
+{
+  function __construct() {
+    rex_multicheckbox::factory();
+  }
+}
 
 
 class rex_category_checkbox extends rex_multicheckbox
