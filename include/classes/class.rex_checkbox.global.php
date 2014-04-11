@@ -8,8 +8,8 @@
  * @author (contributing) https://github.com/jdlx/
  * @author (contributing) https://github.com/gregorharlan/
  *
- * @package redaxo 4.4.x/4.5.x
- * @version 2.5.1
+ * @package redaxo 4.4.x/4.5.x/4.6.x
+ * @version 2.5.2
  */
 
 /**
