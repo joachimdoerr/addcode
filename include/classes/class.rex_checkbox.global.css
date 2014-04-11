@@ -69,7 +69,7 @@
     padding:0 !important;
     margin:0;
     line-height: 14px;
-
+    white-space: nowrap;
 }
 .rex-form-multicheckbox .multicheckbox.disabled label,
 .rex-form-multicheckbox .multicheckbox.disabled .optgroup label,
