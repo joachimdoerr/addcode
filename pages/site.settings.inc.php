@@ -39,7 +39,7 @@ echo '
   <h2 class="rex-hl2">'. $I18N->msg($strAddonName.'_settings') .'</h2>
   <div class="rex-area">
     <div class="rex-form">
-    <form action="index.php?page='.$strAddonName.'" method="post">
+    <form action="index.php?page='.$strAddonName.'&subpage=settings" method="post">
       <fieldset class="rex-form-col-1">
         <div class="rex-form-wrapper">
           <input type="hidden" name="func" value="update" />
