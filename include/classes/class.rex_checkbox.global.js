@@ -9,7 +9,7 @@
  * @author (contributing) https://github.com/gregorharlan/
  *
  * @package redaxo 4.4.x/4.5.x/4.6.x
- * @version 2.5.2
+ * @version 2.5.3
  */
 
 /**

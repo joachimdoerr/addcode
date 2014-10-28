@@ -9,7 +9,7 @@
  * @author (contributing) Gregor Harlan https://github.com/gharlan/
  *
  * @package redaxo 4.4.x/4.5.x/4.6.x
- * @version 2.5.2
+ * @version 2.5.3
  */
 
 // SAVE SETTINGS ACTION

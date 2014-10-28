@@ -9,7 +9,7 @@
  * @author (contributing) https://github.com/gregorharlan/
  *
  * @package redaxo 4.4.x/4.5.x/4.6.x
- * @version 2.5.2
+ * @version 2.5.3
  */
 
 // ADDON IDENTIFIER AUS ORDNERNAMEN ABLEITEN
@@ -23,7 +23,7 @@ $strAddonPath = $REX['INCLUDE_PATH']. '/addons/' .$strAddonName;
 $REX['ADDON']['rxid'][$strAddonName] = '995';
 $REX['ADDON']['page'][$strAddonName] = $strAddonName;
 $REX['ADDON']['name'][$strAddonName] = 'Addcode';
-$REX['ADDON']['version'][$strAddonName]     = '2.5.2';
+$REX['ADDON']['version'][$strAddonName]     = '2.5.3';
 $REX['ADDON']['author'][$strAddonName]      = 'Joachim Doerr';
 $REX['ADDON']['supportpage'][$strAddonName] = 'forum.redaxo.de';
 
